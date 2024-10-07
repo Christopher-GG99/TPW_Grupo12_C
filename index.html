@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIXIT - Seguimiento de Reparaciones</title>
+    <link rel="stylesheet" href="Estilo.css" />
+    <style>
+      /* Estilo para el logo */
+      .img-bottom-right {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 150px; /* ancho */
+        height: auto;
+        z-index: 1000; /* La capa que se sobrepone a las demas(por delante de las demas) */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img src="Imagenes/logo.png" alt="Logo" class="logo" />
+        </div>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Registrar Dispositivo</a></li>
+          <li><a href="#">Estado de Reparación</a></li>
+          <li><a href="#">Soporte</a></li>
+          <li>
+            <a href="#" onclick="toggleContent('mision-content')">Misión</a>
+          </li>
+          <li>
+            <a href="#" onclick="toggleContent('vision-content')">Visión</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- aqui ira la Misión del que esta en el Word-->
+      <div id="mision-content" class="content" style="display: none">
+        <h2>Misión</h2>
+        <p>
+          Brindar el mejor servicio posible de reparación y seguimiento para la
+          reparación de los dispositivos que se nos confían y garantizar la
+          confianza y satisfacción de nuestros clientes a través de nuestro
+          minucioso trabajo con su dispositivo.
+        </p>
+      </div>
+
+      <!-- aqui ira Visión del Word-->
+      <div id="vision-content" class="content" style="display: none">
+        <h2>Visión</h2>
+        <p>
+          Ser la empresa en la que confíes traer tus dispositivos y hacernos
+          reconocidos por la transparencia y eficiencia en nuestras reparaciones
+          de los dispositivos que se nos confían.
+        </p>
+      </div>
+    </main>
+
+    <footer style="position: absolute; bottom: 0; width: 100%">
+      <p style="text-align: center; margin-top: 20px">
+        &copy; 2024 HawkFix. Grupo 12.
+      </p>
+    </footer>
+
+    <script>
+      function toggleContent(contentId) {
+        const content = document.getElementById(contentId);
+        content.style.display =
+          content.style.display === "none" || content.style.display === ""
+            ? "block"
+            : "none";
+      }
+    </script>
+  </body>
+</html>
