@@ -39,12 +39,12 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px; /* tamaño de la fuente */
+    font-size: 18px; /* tamaño de la fuente  */
     line-height: 60px; /* Alinea verticalmente el texto de la barra de opciones de color negro */
 }
 
 .content {
-    display: none; 
+    display: none; /* Ocultar contenido por defecto */
 }
 
 footer {
@@ -56,4 +56,13 @@ footer {
 footer p {
     text-align: center; 
     margin-top: 20px;
+}
+.Imagen-de-cambio:hover{
+    content: url(Imagenes/XiaomiMobil2.webp);
+}
+.Imagen-de-cambio2:hover{
+    content: url(Imagenes/LaptoXiaomi2.jpg);
+}
+.Imagen-de-cambio3:hover{
+    content: url(Imagenes/PC2.jpeg);
 }
