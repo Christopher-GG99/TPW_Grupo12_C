@@ -1,91 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FIXIT - Seguimiento de Reparaciones</title>
     <link rel="stylesheet" href="Estilo.css" />
-  </head>
-  <body>
+    <style>
+        /* Estilo para la imagen en la parte inferior derecha */
+        .img-bottom-right {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 150px;
+            height: auto;
+            z-index: 1000;
+        }
+
+        /* Estilo del carrusel */
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto; /* Centrar el carrusel */
+            overflow: hidden;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Bordes redondeados en los botones */
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .Galeria {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
     <header>
-      <nav>
-        <div class="logo-container">
-          <img src="Imagenes/logo.png" alt="Logo" class="logo" />
-        </div>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Registrar Dispositivo</a></li>
-          <li><a href="#">Estado de Reparación</a></li>
-          <li><a href="#">Soporte</a></li>
-          <li>
-            <a href="#" onclick="toggleContent('mision-content')">Misión</a>
-          </li>
-          <li>
-            <a href="#" onclick="toggleContent('vision-content')">Visión</a>
-          </li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="logo-container">
+                <img src="Imagenes/logo.png" alt="Logo" class="logo" />
+            </div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Registrar Dispositivo</a></li>
+                <li><a href="#">Estado de Reparación</a></li>
+                <li><a href="#">Soporte</a></li>
+                <li>
+                    <a href="#" onclick="toggleContent('mision-content')">Misión</a>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleContent('vision-content')">Visión</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-      <!-- Mision esta en el Word -->
-      <div id="mision-content" class="content" style="display: none">
-        <h2>Misión</h2>
-        <p>
-          Brindar el mejor servicio posible de reparación y seguimiento para la
-          reparación de los dispositivos que se nos confían y garantizar la
-          confianza y satisfacción de nuestros clientes a través de nuestro
-          minucioso trabajo con su dispositivo.
-        </p>
-      </div>
+        <!-- Contenido para la Misión -->
+        <div id="mision-content" class="content" style="display: none">
+            <h2>Misión</h2>
+            <p>
+                Brindar el mejor servicio posible de reparación y seguimiento para la
+                reparación de los dispositivos que se nos confían y garantizar la
+                confianza y satisfacción de nuestros clientes a través de nuestro
+                minucioso trabajo con su dispositivo.
+            </p>
+        </div>
 
-      <!-- Vision esta en el word -->
-      <div id="vision-content" class="content" style="display: none">
-        <h2>Visión</h2>
-        <p>
-          Ser la empresa en la que confíes traer tus dispositivos y hacernos
-          reconocidos por la transparencia y eficiencia en nuestras reparaciones
-          de los dispositivos que se nos confían.
-        </p>
-      </div>
+        <!-- Contenido para la Visión -->
+        <div id="vision-content" class="content" style="display: none">
+            <h2>Visión</h2>
+            <p>
+                Ser la empresa en la que confíes traer tus dispositivos y hacernos
+                reconocidos por la transparencia y eficiencia en nuestras reparaciones
+                de los dispositivos que se nos confían.
+            </p>
+        </div>
     </main>
-    <div class="Galeria">
-      <img
-        src="Imagenes/XiaomiMobil1.jpg"
-        width="300"
-        height="350"
-        class="Imagen-de-cambio"
-      />
-      <img
-        src="Imagenes/LaptoXiaomi1.jpg"
-        width="300"
-        height="350"
-        class="Imagen-de-cambio2"
-      />
-      <img
-        src="Imagenes/PC1.jpg"
-        width="300"
-        height="350"
-        class="Imagen-de-cambio3"
-      />
-    </div>
-    <div 
-    #search
 
-    <footer style="position: absolute; bottom: 0; width: 100%">
-      <p style="text-align: center; margin-top: 20px">
-        &copy; 2024 HawkFix. Grupo 12.
-      </p>
+    <div class="image-container">
+            <div class="image-hover">
+                <img src="Imagenes/XiaomiMobil1.jpg" alt="Imagen Xiaomi 1">
+                <img src="Imagenes/XiaomiMobil2.jpg" alt="Imagen Xiaomi 2" class="hover-image">
+            </div>
+
+            <div class="image-hover">
+                <img src="Imagenes/LaptoXiaomi1.jpg" alt="Laptop Xiaomi 1">
+                <img src="Imagenes/LaptoXiaomi2.jpg" alt="Laptop Xiaomi 2" class="hover-image">
+            </div>
+
+            <div class="image-hover">
+                <img src="Imagenes/PC1.jpg" alt="PC 1">
+                <img src="Imagenes/PC2.jpg" alt="PC 2" class="hover-image">
+            </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2024 HawkFix. Grupo 12.</p>
     </footer>
 
     <script>
-      function toggleContent(contentId) {
-        const content = document.getElementById(contentId);
-        content.style.display =
-          content.style.display === "none" || content.style.display === ""
-            ? "block"
-            : "none";
-      }
+
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId);
+            content.style.display =
+                content.style.display === "none" || content.style.display === ""
+                ? "block"
+                : "none";
+        }
     </script>
-  </body>
+</body>
 </html>

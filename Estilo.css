@@ -1,3 +1,4 @@
+/* General styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,63 +7,97 @@ body {
 
 header {
     background-color: #333;
-    padding: 0; /* Area de Relleno 0 para que el logo y la cinta ocupen el mismo espacio */
 }
 
 nav {
-    display: flex; /* alinea los elementos */
-    align-items: center; /* Centra en vertical los elementos */
-    height: 60px; /* Altura de la cinta de navegación */
-}
-
-.logo-container {
-    margin: 0; /* Sin márgenes */
+    display: flex;
+    align-items: center;
+    height: 60px;
 }
 
 .logo {
-    height: 50px; /* Ajusta la altura del logo */
+    height: 50px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* alinea horizontalmente */
-    flex-grow: 1; /* hace que el menu use el espacio que sobra */
-    justify-content: center; /* Centra las opciones */
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 nav ul li {
-    margin-left: 20px; /* Espacio entre los elementos de la lista */
+    margin-left: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px; /* tamaño de la fuente  */
-    line-height: 60px; /* Alinea verticalmente el texto de la barra de opciones de color negro */
-}
-
-.content {
-    display: none; /* Ocultar contenido por defecto */
+    font-size: 18px;
+    line-height: 60px;
 }
 
 footer {
-    position: absolute; 
-    bottom: 0; 
+    position: relative;
+    bottom: 0;
     width: 100%;
 }
 
 footer p {
-    text-align: center; 
+    text-align: center;
     margin-top: 20px;
 }
-.Imagen-de-cambio:hover{
-    content: url(Imagenes/XiaomiMobil2.webp);
+
+/* Image hover effect */
+.image-container {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin: 60px auto; /* Añade más espacio superior para bajar las imágenes */
+    max-width: 80%; /* Limita el ancho del contenedor */
+    padding: 10px; /* Añade espacio interno */
 }
-.Imagen-de-cambio2:hover{
-    content: url(Imagenes/LaptoXiaomi2.jpg);
+
+.image-hover {
+    position: relative;
+    width: 300px;
+    height: auto;
 }
-.Imagen-de-cambio3:hover{
-    content: url(Imagenes/PC2.jpeg);
+
+.image-hover img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Imagen oculta por defecto */
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image-hover:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image-hover:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image-hover {
+        width: 100%;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
 }
