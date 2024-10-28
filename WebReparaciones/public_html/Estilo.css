@@ -1,0 +1,372 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    background-image: url(Imagenes/FondoWeb3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: #000000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-weight: bold;
+}
+
+ul li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c21818
+}
+
+.logo {
+    height: 60px;
+}
+
+.imagen-top {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .25), rgb(0 0 0 / .75)),url(Imagenes/ImagenTop.png);
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.imagentop-texto {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.boton-registro {
+    display:flex;
+    width: 100px;
+    margin: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 100px; /* Añade más espacio superior para bajar las imágenes */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #c21818;
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border-radius: 12px;
+    font-family: sans-serif;
+    transition: all 300ms ease;
+}
+
+.boton-registro:hover {
+    color: #000000;
+}
+
+.pie-pagina {
+    width: 100%;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pie-pagina .grupo-1 .box p{
+    color: #999999;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
+    margin-right: 10px;
+    margin-left: 20px;
+    background-color: #c21818;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: #000000;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #000000;
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+.dispositivos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 250px; /* Añade más espacio superior para bajar las imágenes */
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+}
+
+/* Image hover effect */
+.image-container {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center;
+    gap: 80px; /* Espacio entre las imágenes */
+    margin-bottom: 500px;
+    margin-top: 10px; /* Añade más espacio superior para bajar las imágenes */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%; /* Limita el ancho del contenedor */
+    padding: 40px; /* Añade espacio interno */
+    background-color: #000000;
+}
+
+.image-hover1 {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .5), rgb(0 0 0 / .5)),url(Imagenes/XiaomiMobil2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.image-hover2 {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .5), rgb(0 0 0 / .5)),url(Imagenes/LaptoXiaomi2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.image-hover3 {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .25), rgb(0 0 0 / .25)),url(Imagenes/PC2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.image-hover1 img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image-hover2 img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image-hover3 img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Imagen oculta por defecto */
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image-hover1:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image-hover1:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+.image-hover2:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image-hover2:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+.image-hover3:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image-hover3:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+/*
+
+
+
+
+
+
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+
+    body {
+        background-size: cover;
+        padding: 0;
+    }
+
+    nav {
+        flex-direction: column; /* Los elementos del menú se colocarán en una columna */
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    ul li {
+        display: block; /* Cambia la visualización a bloque para ocupar todo el ancho */
+        text-align: center; /* Centra los enlaces en la pantalla */
+        padding: 10px 0; /* Añade espacio entre los elementos del menú */
+    }
+
+    .logo {
+        height: 40px; /* Reduce el tamaño del logo en pantallas móviles */
+        margin-bottom: 10px; /* Añade espacio debajo del logo */
+    }
+
+    a {
+        font-size: 16px; /* Reduce el tamaño de la fuente para una mejor visualización en móviles */
+    }
+
+    header {
+        padding: 10px; /* Añade algo de padding para mejorar la visualización en pantallas pequeñas */
+    }
+
+
+    .imagen-top {
+        height: 400px; /* Ajusta la altura de la imagen superior en móviles */
+        background-size: cover;
+    }
+
+    .imagentop-texto {
+        font-size: 20px; /* Ajusta el tamaño del texto en móviles */
+        padding: 10px;
+    }
+
+    .pie-pagina .grupo-1 {
+        grid-template-columns: 1fr; /* Una columna en lugar de tres para móviles */
+        grid-gap: 20px;
+        padding: 30px 0;
+    }
+
+    .pie-pagina .grupo-1 .box figure img {
+        width: 75%; /* Imágenes más pequeñas en móviles */
+    }
+
+    .pie-pagina .grupo-2 {
+        padding: 10px;
+    }
+
+    .dispositivos {
+        width: 100%; /* Ajusta el ancho a móviles */
+        margin-top: 50px; /* Reduce el margen superior en móviles */
+    }
+
+    .image-container {
+        flex-direction: column; /* Coloca las imágenes en una columna en lugar de una fila */
+        gap: 20px; /* Ajusta el espacio entre las imágenes */
+        padding: 20px;
+        margin-bottom: 200px;
+    }
+
+    .image-hover1, .image-hover2, .image-hover3 {
+        width: 100%; /* Ajusta el ancho de las imágenes al 100% en móviles */
+        height: 250px; /* Altura reducida para pantallas pequeñas */
+    }
+
+    .image-hover1 img, .image-hover2 img, .image-hover3 img {
+        width: 100%;
+        height: auto; /* Mantén la proporción de las imágenes en móviles */
+    }
+
+    .pie-pagina {
+        position: relative;
+    }
+}
