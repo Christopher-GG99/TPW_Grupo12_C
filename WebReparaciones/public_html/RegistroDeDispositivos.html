@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Registro de Dispositivo</title>
-        <link rel="stylesheet" href="EstiloRegistroDeDispositivo.css" />
-    </head>
-    <body>
-        <button id="volver" onclick="window.history.back();">&#8592;</button>
-        
-        <div class="container">
-            <h2>Registro de Dispositivos FIXIT</h2>
-            <form id="registroForm">
-                <!-- Selección del tipo de dispositivo -->
-                <label for="tipoDispositivo">Tipo de dispositivo:</label>
-                <select id="tipoDispositivo" required>
-                    <option value="movil">Móvil</option>
-                    <option value="laptop">Laptop</option>
-                    <option value="pc">PC</option>
-                </select>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Dispositivo</title>
+    <link rel="stylesheet" href="EstiloRegistroDeDispositivo.css" />
+  </head>
+  <body>
+    <button id="volver" onclick="window.history.back();">&#8592;</button>
 
-                <!-- Selección de marca (o tipo de PC) -->
-                <label for="marca">Marca/Tipo:</label>
-                <select id="marca" required>
-                    <!-- Opciones generadas dinámicamente -->
-                </select>
+    <div class="container">
+      <h2>Registro de Dispositivos FIXIT</h2>
+      <div class="content">
+        <!-- Formulario -->
+        <form id="registroForm">
+          <label for="tipoDispositivo">Tipo de dispositivo:</label>
+          <select id="tipoDispositivo" required>
+            <option value="movil">Móvil</option>
+            <option value="laptop">Laptop</option>
+            <option value="pc">PC</option>
+          </select>
 
-                <!-- Selección de problema -->
-                <label for="problema">Problema:</label>
-                <select id="problema" required>
-                    <!-- Opciones generadas dinámicamente -->
-                </select>
+          <label for="marca">Marca/Tipo:</label>
+          <select id="marca" required></select>
 
-                <!-- Botón para registrar -->
-                <button type="submit">Registrar Dispositivo</button>
+          <label for="problema">Problema:</label>
+          <select id="problema" required></select>
 
-                <!-- Botón para retroceder -->
-                <button type="button" onclick="window.history.back()">Atrás</button>
-            </form>
+          <button type="submit">Registrar Dispositivo</button>
+        </form>
+
+        <!-- Tabla de dispositivos registrados -->
+        <div class="tabla-container">
+          <h2>Dispositivos Registrados</h2>
+          <table id="tablaDispositivos">
+            <thead>
+              <tr>
+                <th>Tipo de Dispositivo</th>
+                <th>Marca</th>
+                <th>Problema</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
+      </div>
+    </div>
 
-        <script src="ScriptRegistroDispositivos.js"></script>
-    </body>
+    <script src="ScriptRegistroDispositivos.js"></script>
+  </body>
 </html>

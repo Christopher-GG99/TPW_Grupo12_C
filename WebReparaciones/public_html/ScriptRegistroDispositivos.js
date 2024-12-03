@@ -1,6 +1,9 @@
+// Elementos del DOM
 const tipoDispositivo = document.getElementById("tipoDispositivo");
 const marca = document.getElementById("marca");
 const problema = document.getElementById("problema");
+const registroForm = document.getElementById("registroForm");
+const tablaDispositivos = document.getElementById("tablaDispositivos").querySelector("tbody");
 
 // Opciones por tipo de dispositivo
 const opciones = {
@@ -47,11 +50,9 @@ const opciones = {
 
 // Función para cargar opciones según el dispositivo seleccionado
 function cargarOpciones(tipo) {
-  // Limpiar las opciones actuales
   marca.innerHTML = "";
   problema.innerHTML = "";
 
-  // Agregar marcas/tipos
   opciones[tipo].marcas.forEach((opcion) => {
     const opt = document.createElement("option");
     opt.value = opcion.toLowerCase();
@@ -59,7 +60,6 @@ function cargarOpciones(tipo) {
     marca.appendChild(opt);
   });
 
-  // Agregar problemas
   opciones[tipo].problemas.forEach((opcion) => {
     const opt = document.createElement("option");
     opt.value = opcion.toLowerCase().replace(/\s+/g, "-");
@@ -68,10 +68,50 @@ function cargarOpciones(tipo) {
   });
 }
 
+// Generar código único de registro
+function generarCodigo() {
+  const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let codigo = "";
+  for (let i = 0; i < 8; i++) {
+    const indice = Math.floor(Math.random() * caracteres.length);
+    codigo += caracteres[indice];
+  }
+  return codigo;
+}
+
 // Inicializar con "Móvil" seleccionado por defecto
 cargarOpciones("movil");
 
 // Cambiar opciones al seleccionar un tipo de dispositivo
 tipoDispositivo.addEventListener("change", (e) => {
   cargarOpciones(e.target.value);
+});
+
+// Manejar el evento de envío del formulario
+registroForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Crear un objeto con los datos del formulario
+  const nuevoRegistro = {
+    tipoDispositivo: tipoDispositivo.options[tipoDispositivo.selectedIndex].text,
+    marca: marca.options[marca.selectedIndex].text,
+    problema: problema.options[problema.selectedIndex].text,
+    codigo: generarCodigo(),
+  };
+
+  // Crear una nueva fila para la tabla
+  const nuevaFila = document.createElement("tr");
+  nuevaFila.innerHTML = `
+    <td>${nuevoRegistro.tipoDispositivo}</td>
+    <td>${nuevoRegistro.marca}</td>
+    <td>${nuevoRegistro.problema}</td>
+    <td>${nuevoRegistro.codigo}</td>
+  `;
+
+  // Agregar la fila a la tabla
+  tablaDispositivos.appendChild(nuevaFila);
+
+  // Limpiar el formulario y restablecer las opciones predeterminadas
+  registroForm.reset();
+  cargarOpciones("movil");
 });

@@ -37,9 +37,9 @@ h2 {
   z-index: 5; /* Asegura que el título esté por debajo del botón */
   font-size: 25px; /* Tamaño de la fuente */
   font-weight: bold; /* Hacer el texto más grueso */
-  background-color: #ffffff; /* Degradado rojo */
+  background-color: #ffffff; /* Fondo blanco */
   -webkit-background-clip: text; /* Aplica el degradado solo al texto */
-  color: transparent; /* Hace que el color del texto sea transparente, permitiendo que el degradado se vea */
+  color: transparent; /* Hace que el color del texto sea transparente */
 }
 
 #ruleta {
@@ -111,4 +111,21 @@ h2 {
 #girar:hover {
   background: linear-gradient(135deg, #424242, #616161); /* Efecto hover más oscuro */
   transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+}
+
+#girar:disabled {
+  background: #bdbdbd; /* Botón deshabilitado */
+  cursor: not-allowed; /* Cursor de no permitido */
+}
+
+/* Estilo para el código de canje */
+.codigo {
+  font-weight: bold;
+  color: #ff9800;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.codigo:hover {
+  color: #ffc107;
 }

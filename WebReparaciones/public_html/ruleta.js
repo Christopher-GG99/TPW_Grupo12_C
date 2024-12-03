@@ -11,48 +11,69 @@ const premios = [
     "Fondo de Pantalla animado de la marca"
 ];
 
+let girosRestantes = 5; // Máximo de giros permitidos
+
+function generarCodigo() {
+    const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let codigo = "";
+    for (let i = 0; i < 8; i++) {
+        codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    return codigo;
+}
+
 document.getElementById("girar").addEventListener("click", function () {
-    let premioAleatorio = Math.floor(Math.random() * casillas.length); // Índice del premio
-    let vueltasBase = 3; // Número de vueltas completas
-    let vueltasTotales = vueltasBase * casillas.length + premioAleatorio; // Total de pasos
+    if (girosRestantes > 0) {
+        let premioAleatorio = Math.floor(Math.random() * casillas.length); // Índice del premio
+        let vueltasBase = 3; // Número de vueltas completas
+        let vueltasTotales = vueltasBase * casillas.length + premioAleatorio; // Total de pasos
 
-    let indiceActual = 0;
-    let intervalo = 100; // Velocidad inicial
-    let intervaloID = setInterval(() => {
-        // Quitar resaltado de la casilla actual
-        casillas[indiceActual].classList.remove('seleccionada');
+        let indiceActual = 0;
+        let intervalo = 100; // Velocidad inicial
+        let intervaloID = setInterval(() => {
+            casillas[indiceActual].classList.remove('seleccionada');
+            indiceActual = (indiceActual + 1) % casillas.length;
+            casillas[indiceActual].classList.add('seleccionada');
+            vueltasTotales--;
 
-        // Avanzar a la siguiente casilla
-        indiceActual = (indiceActual + 1) % casillas.length;
+            if (vueltasTotales < 10) {
+                intervalo += 20;
+                clearInterval(intervaloID);
+                intervaloID = setInterval(() => {
+                    if (vueltasTotales <= 0) {
+                        clearInterval(intervaloID);
 
-        // Resaltar la nueva casilla
-        casillas[indiceActual].classList.add('seleccionada');
+                        const codigoCanje = generarCodigo();
+                        document.getElementById("resultado").innerHTML =
+                            `¡Felicidades! Has ganado: ${premios[premioAleatorio]}<br>` +
+                            `Código de canje: <span class="codigo" onclick="copiarCodigo('${codigoCanje}')">${codigoCanje}</span>`;
 
-        vueltasTotales--;
+                    } else {
+                        casillas[indiceActual].classList.remove('seleccionada');
+                        indiceActual = (indiceActual + 1) % casillas.length;
+                        casillas[indiceActual].classList.add('seleccionada');
+                        vueltasTotales--;
+                    }
+                }, intervalo);
+            }
 
-        // Reducir gradualmente la velocidad para un efecto de frenado
-        if (vueltasTotales < 10) {
-            intervalo += 20; // Incrementar intervalo para reducir la velocidad
-            clearInterval(intervaloID); // Detener el intervalo actual
-            intervaloID = setInterval(() => {
-                if (vueltasTotales <= 0) {
-                    clearInterval(intervaloID);
-                    document.getElementById("resultado").textContent =
-                        "¡Felicidades! Has ganado: " + premios[premioAleatorio];
-                } else {
-                    casillas[indiceActual].classList.remove('seleccionada');
-                    indiceActual = (indiceActual + 1) % casillas.length;
-                    casillas[indiceActual].classList.add('seleccionada');
-                    vueltasTotales--;
-                }
-            }, intervalo);
+            if (vueltasTotales <= 0) {
+                clearInterval(intervaloID);
+            }
+        }, intervalo);
+
+        girosRestantes--; // Reducir el contador de giros
+        if (girosRestantes === 0) {
+            document.getElementById("girar").disabled = true; // Deshabilitar el botón
+            document.getElementById("resultado").textContent +=
+                "\nHas alcanzado el límite de giros.";
         }
-
-        // Detenerse cuando las vueltas se completen
-        if (vueltasTotales <= 0) {
-            clearInterval(intervaloID);
-            document.getElementById("resultado").textContent =
-                "¡Felicidades! Has ganado: " + premios[premioAleatorio];
-        }
-    }, intervalo);
+    }
 });
+
+// Función para copiar el código al portapapeles
+function copiarCodigo(codigo) {
+    navigator.clipboard.writeText(codigo).then(() => {
+        alert("¡Código copiado al portapapeles!");
+    });
+}
