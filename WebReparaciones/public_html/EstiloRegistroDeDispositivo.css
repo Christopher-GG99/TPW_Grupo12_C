@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo general */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;  /* Fondo claro */
+  color: #333;  /* Texto en gris oscuro (para un buen contraste) */
+  background-image: url('Imagenes/ImagenTop.png');  /* Ruta de la imagen */
+  background-size: cover;  /* Asegura que la imagen cubra toda la pantalla */
+  background-position: center center;  /* Centra la imagen */
+  background-attachment: fixed;  /* Fija la imagen de fondo al hacer scroll */
+}
+
+#volver {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #616161, #424242); /* Gris oscuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  position: absolute;
+  top: 20px; /* Se coloca arriba */
+  left: 20px; /* Se coloca a la izquierda */
+  z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+#volver:hover {
+  background: linear-gradient(135deg, #424242, #616161); /* Efecto hover más oscuro */
+  transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+}
+
+/* Estilo del contenedor */
+.container {
+  background: rgba(255, 255, 255, 0.9);  /* Fondo blanco con ligera opacidad para resaltar el contenido */
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil en negro */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Título con degradado */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  background: linear-gradient(315deg, #B22222 0%, #FF6347 100%);  /* Degradado de rojo oscuro a rojo claro */
+  -webkit-background-clip: text;  /* Para que el degradado se aplique solo al texto */
+  color: transparent;  /* Hace que el color de fondo se vea solo en el texto */
+  display: inline;  /* Asegura que el degradado se aplique solo al texto */
+}
+
+/* Estilo para los labels */
+form label {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;  /* Color gris oscuro para los labels */
+}
+
+form select,
+form button {
+  margin-top: 5px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ffffff;  /* Borde blanco para los campos de formulario */
+  font-size: 14px;
+  color: #333;  /* Color gris oscuro para el texto de los select */
+}
+
+/* Botón de enviar con degradado */
+form button {
+  margin-top: 20px;
+  background: linear-gradient(315deg, #B22222 0%, #FF6347 100%);  /* Degradado de rojo oscuro a rojo claro */
+  color: white;  /* Texto blanco en el botón */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+  background: linear-gradient(315deg, #FF6347 0%, #B22222 100%);  /* Reversa el degradado al hacer hover */
+}
+
+/* Botón de retroceder con degradado oscuro */
+form button[type="button"] {
+  background: linear-gradient(315deg, #FF6347 0%, #B22222 100%);  /* Degradado de gris oscuro a más claro */
+  color: white;  /* Texto blanco */
+  margin-top: 10px;
+}
+
+form button[type="button"]:hover {
+  background: linear-gradient(315deg, #555 0%, #333 100%);  /* Reversa el degradado al hacer hover */
+}

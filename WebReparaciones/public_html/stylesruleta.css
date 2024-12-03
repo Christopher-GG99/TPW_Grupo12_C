@@ -1,54 +1,114 @@
-.{font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f7f7f7;
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('Imagenes/ImagenTop.png'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* La imagen cubrirá toda la ventana */
+  background-position: center center; /* Centra la imagen */
+  background-attachment: fixed; /* La imagen de fondo no se moverá al hacer scroll */
+}
+
+#volver {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #616161, #424242); /* Gris oscuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  position: absolute;
+  top: 20px; /* Se coloca arriba */
+  left: 20px; /* Se coloca a la izquierda */
+  z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+#volver:hover {
+  background: linear-gradient(135deg, #424242, #616161); /* Efecto hover más oscuro */
+  transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+}
+
+h2 {
+  margin-top: 40px; /* Espacio superior para separar el título del botón */
+  z-index: 5; /* Asegura que el título esté por debajo del botón */
+  font-size: 25px; /* Tamaño de la fuente */
+  font-weight: bold; /* Hacer el texto más grueso */
+  background-color: #ffffff; /* Degradado rojo */
+  -webkit-background-clip: text; /* Aplica el degradado solo al texto */
+  color: transparent; /* Hace que el color del texto sea transparente, permitiendo que el degradado se vea */
 }
 
 #ruleta {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 5px;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin-bottom: 20px;
 }
 
 .casilla {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #4caf50;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Colores de las casillas de 3 en 3 */
+.casilla:nth-child(1),
+.casilla:nth-child(4),
+.casilla:nth-child(7) {
+  background-color: #c46548; /* Naranja oscuro */
+}
+
+.casilla:nth-child(2),
+.casilla:nth-child(5),
+.casilla:nth-child(8) {
+  background-color: #c04f4f; /* Rojo */
+}
+
+.casilla:nth-child(3),
+.casilla:nth-child(6),
+.casilla:nth-child(9) {
+  background-color: #609ad4; /* Azul */
+}
+
+.casilla:hover {
+  transform: scale(1.1); /* Agranda la casilla al pasar el mouse */
+  filter: brightness(1.2); /* Hace el color más brillante */
 }
 
 .casilla.seleccionada {
-    background-color: #ffeb3b;
-    color: #333;
+  background-color: #ffeb3b; /* Resalta en amarillo al seleccionar */
+  color: #333;
 }
 
 #resultado {
-    font-size: 18px;
-    margin-top: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #ffffff;
 }
 
 #girar {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #616161, #424242); /* Gris oscuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #girar:hover {
-    background-color: #0056b3;
+  background: linear-gradient(135deg, #424242, #616161); /* Efecto hover más oscuro */
+  transform: scale(1.1); /* Agranda el botón al pasar el mouse */
 }

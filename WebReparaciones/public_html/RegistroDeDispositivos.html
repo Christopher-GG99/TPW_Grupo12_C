@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro de Dispositivo</title>
+        <link rel="stylesheet" href="EstiloRegistroDeDispositivo.css" />
+    </head>
+    <body>
+        <button id="volver" onclick="window.history.back();">&#8592;</button>
+        
+        <div class="container">
+            <h2>Registro de Dispositivos FIXIT</h2>
+            <form id="registroForm">
+                <!-- Selección del tipo de dispositivo -->
+                <label for="tipoDispositivo">Tipo de dispositivo:</label>
+                <select id="tipoDispositivo" required>
+                    <option value="movil">Móvil</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="pc">PC</option>
+                </select>
+
+                <!-- Selección de marca (o tipo de PC) -->
+                <label for="marca">Marca/Tipo:</label>
+                <select id="marca" required>
+                    <!-- Opciones generadas dinámicamente -->
+                </select>
+
+                <!-- Selección de problema -->
+                <label for="problema">Problema:</label>
+                <select id="problema" required>
+                    <!-- Opciones generadas dinámicamente -->
+                </select>
+
+                <!-- Botón para registrar -->
+                <button type="submit">Registrar Dispositivo</button>
+
+                <!-- Botón para retroceder -->
+                <button type="button" onclick="window.history.back()">Atrás</button>
+            </form>
+        </div>
+
+        <script src="ScriptRegistroDispositivos.js"></script>
+    </body>
+</html>

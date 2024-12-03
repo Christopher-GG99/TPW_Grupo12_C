@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iniciar Sesión</title>
-        <link rel="stylesheet" href="EstiloLogin.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-        <script
-            src="https://kit.fontawesome.com/e7f2d18610.js"
-            crossorigin="anonymous"
-        ></script>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="EstiloLogin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e7f2d18610.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Iniciar sesión</h2>
 
-     <div class="login-container">
-        <h2>Iniciar sesión</h2>
+      <!-- Formulario -->
+      <form action="procesar_login.php" method="POST">
+        <input
+          type="text"
+          name="username"
+          placeholder="Nombre de usuario"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          required
+        />
 
-        <!-- Formulario -->
-        <form action="procesar_login.php" method="POST">
-            <input type="text" name="username" placeholder="Nombre de usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-
-            <!-- Botones sociales -->
-            <div class="social-buttons">
-                <a href="#" class="fa fa-google"></a>
-                <a href="#" class="fa fa-apple"></a>
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>  
-            </div>
-
-            <!-- Checkbox -->
-            <div class="checkbox-container">
-                <input type="checkbox" id="stay-connected" name="stay-connected">
-                <label for="stay-connected">Permanecer conectado</label>
-            </div>
-
-            <!-- Botón de enviar -->
-            <button type="submit" class="submit-btn">→</button>
-        </form>
-
-        <!-- Enlaces adicionales -->
-        <div class="extra-links">
-            <p><a href="#">Crear cuenta</a></p>
+        <!-- Botones sociales -->
+        <div class="social-buttons">
+          <a href="#" class="fa fa-google"></a>
+          <a href="#" class="fa fa-apple"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
         </div>
-    </div>
 
-</body>
+        <!-- Checkbox -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="stay-connected" name="stay-connected" />
+          <label for="stay-connected">Permanecer conectado</label>
+        </div>
+
+        <!-- Botón de enviar -->
+        <button type="submit" class="submit-btn">→</button>
+      </form>
+
+      <!-- Enlaces adicionales -->
+      <div class="extra-links">
+        <p><a href="#">Crear cuenta</a></p>
+      </div>
+    </div>
+  </body>
 </html>

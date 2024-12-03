@@ -1,0 +1,417 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background-image: url(Imagenes/FondoWeb3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    font-weight: bold;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    padding-left: 20px;
+    height: 100%;
+    align-items: center;
+}
+
+.logo img {
+    width: 200px;
+}
+
+nav ul {
+    display: flex;
+    width: 700px;
+    margin-right: 200px;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #c21818
+}
+
+.login-button {
+    display: flex;
+    width: 110px;
+    margin-left: 200px;
+    margin-right: 20px;
+    justify-content: center;
+    background-color: red;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: "Roboto Flex";
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0); /* Inicialmente sin brillo */
+    background: linear-gradient(315deg, #ff7272 0, #600000 100%);
+}
+
+.login-button:hover {
+    color: #000000;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, .5); /* Brillo al hacer hover */
+}
+
+.imagen-top {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .25), rgb(0 0 0 / .75)),url(Imagenes/ImagenTop.png);
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.imagentop-texto {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.boton-registro {
+    display:flex;
+    width: 100px;
+    margin: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 100px; /* Añade más espacio superior para bajar las imágenes */
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(315deg, #ff7272 0, #600000 100%);
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    font-family: "Roboto Flex";
+    font-weight: 600;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0); /* Inicialmente sin brillo */
+}
+
+.boton-registro:hover {
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, .5); /* Brillo al hacer hover */
+    transform: scale(1.03); /* Le da un ligero aumento de tamaño */
+}
+
+.pie-pagina {
+    width: 100%;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pie-pagina .grupo-1 .box p{
+    color: #999999;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pie-pagina .grupo-1 .red-social {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    line-height: 45px;
+    color: #ffffff;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #c21818;
+    text-align: center;
+    transition: all 300ms ease;
+    border-radius: 8px;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: #000000;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #000000;
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+.dispositivos {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 300px; /* Añade más espacio superior para bajar las imágenes */
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    z-index: 99999;
+}
+
+/* Image hover effect */
+.image-container {
+    display: flex;
+    position: relative;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center;
+    gap: 80px; /* Espacio entre las imágenes */
+    margin-bottom: 500px;
+    margin-top: 200px; /* Añade más espacio superior para bajar las imágenes */
+    max-width: 100%; /* Limita el ancho del contenedor */
+    height: 1000px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1), /* Fondo visible en el centro */
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+        );
+}
+
+.image1 {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .5), rgb(0 0 0 / .5)),url(Imagenes/XiaomiMobil2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.image2 {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .5), rgb(0 0 0 / .5)),url(Imagenes/LaptoXiaomi2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.image3 {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0 / .25), rgb(0 0 0 / .25)),url(Imagenes/PC2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.image1 img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image2 img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image3 img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Imagen oculta por defecto */
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.image1:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image1:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+.image2:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image2:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+.image3:hover .hover-image {
+    opacity: 1; /* Muestra la segunda imagen al hacer hover */
+}
+
+.image3:hover img:first-child {
+    opacity: 0; /* Oculta la primera imagen al hacer hover */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+
+    body {
+        background-size: cover;
+    }
+
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 5px;
+    }
+
+    .logo img {
+        width: 150px;
+        height: 40px;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .imagen-top {
+        width: 100%;
+        height: 700px; /* Ajusta la altura de la imagen superior en móviles */
+        background-size: cover;
+    }
+
+    .imagentop-texto {
+        font-size: 11px; /* Ajusta el tamaño del texto en móviles */
+    }
+
+    .pie-pagina .grupo-1 {
+        grid-template-columns: 1fr; /* Una columna en lugar de tres para móviles */
+        grid-gap: 20px;
+        padding: 30px 0;
+    }
+
+    .pie-pagina .grupo-1 .box figure {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pie-pagina .grupo-1 .box figure img {
+        width: 100%; /* Imágenes más pequeñas en móviles */
+    }
+
+    .pie-pagina .grupo-2 {
+        padding: 10px;
+    }
+
+    .dispositivos {
+        width: 100%; /* Ajusta el ancho a móviles */
+        margin-top: 200px; /* Reduce el margen superior en móviles */
+    }
+
+    .image-container {
+        width: 100%;
+        flex-direction: column; /* Coloca las imágenes en una columna en lugar de una fila */
+        gap: 50px; /* Ajusta el espacio entre las imágenes */
+        margin-top: 300px;
+        margin-bottom: 200px;
+        background: transparent;
+    }
+
+    .image1, .image2, .image3 {
+        width: 70%; /* Ajusta el ancho de las imágenes al 100% en móviles */
+        height: 220px; /* Altura reducida para pantallas pequeñas */
+    }
+
+    .image1 img, .image2 img, .image3 img {
+        width: 100%;
+        height: 100%; /* Mantén la proporción de las imágenes en móviles */
+    }
+
+    .pie-pagina {
+        width: 100%;
+    }
+}

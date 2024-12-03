@@ -1,103 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HawkFix - Seguimiento de Reparaciones</title>
-        <link rel="stylesheet" href="Estilo.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-        <script
-            src="https://kit.fontawesome.com/e7f2d18610.js"
-            crossorigin="anonymous"
-        ></script>
-    </head>
-    <body>
-        <header id="header">
-            <div class="logo">
-                <img src="Imagenes/logo.png" alt="Logo">
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HawkFix - Seguimiento de Reparaciones</title>
+    <link rel="stylesheet" href="EstiloIndex.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e7f2d18610.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="logo">
+        <img src="Imagenes/logo.png" alt="Logo" />
+      </div>
 
-            <nav>
-                <ul>
-                    <li><a href="Formulario.html">Registrar Dispositivo</a></li>
-                    <li><a href="#">Estado de Reparación</a></li>
-                    <li><a href="#footer">Soporte</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                </ul>
-            </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="RegistroDeDispositivos.html"
+              >Registra tu Dispositivo a reparar</a
+            >
+          </li>
+          <li><a href="#">Estado de Reparación</a></li>
+          <li><a href="#footer">Soporte</a></li>
+          <li><a href="Nosotros.html">Nosotros</a></li>
+          <li><a href="Ruleta.html">Ruleta de Premios</a></li>
+          <li><a href="TablaUsuario.html">Tabla de Usuario</a></li>
+          <li><a href="TablaCitas.html">Tabla de Citas</a></li>
+        </ul>
+      </nav>
 
-            <a href="Login.html" class="login-button">INICIAR SESIÓN</a>
-        </header>
+      <a href="Login.html" class="login-button">INICIAR SESIÓN</a>
+    </header>
 
-        <div class="imagen-top">
-            <div class="imagentop-texto">
-                <h1>Circuitos que vuelven a latir</h1>
-                <p>Nosotros lo hacemos posible</p>
-                <a href="Formulario.html" class="boton-registro">Regístrate</a>
-            </div>
+    <div class="imagen-top">
+      <div class="imagentop-texto">
+        <h1>Circuitos que vuelven a latir</h1>
+        <p>Nosotros lo hacemos posible</p>
+        <a href="RegistroDeDispositivos.html" class="boton-registro"
+          >Solicitar Reparacion</a
+        >
+      </div>
+    </div>
+
+    <div class="dispositivos">
+      <h1>Dispositivos a su elección</h1>
+    </div>
+
+    <div class="image-container">
+      <div class="image1">
+        <h3>Smartphone</h3>
+        <img
+          src="Imagenes/XiaomiMobil1.jpg"
+          alt="Imagen Xiaomi 1"
+          class="hover-image"
+        />
+      </div>
+      <div class="image2">
+        <h3>Notebook</h3>
+        <img
+          src="Imagenes/LaptoXiaomi1.jpg"
+          alt="Laptop Xiaomi 1"
+          class="hover-image"
+        />
+      </div>
+      <div class="image3">
+        <h3>PC</h3>
+        <img src="Imagenes/PC1.jpg" alt="PC 1" class="hover-image" />
+      </div>
+    </div>
+
+    <footer id="footer" class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#header">
+              <img src="Imagenes/logo.png" alt="Logo HawkFix" />
+            </a>
+          </figure>
         </div>
 
-        <div class="dispositivos">
-            <h1>Dispositivos a su elección</h1>
+        <div class="box">
+          <h2>CONTÁCTANOS</h2>
+          <p>WhatsApp</p>
+          <p>+51 921293419</p>
         </div>
 
-        <div class="image-container">
-            <div class="image1">
-                <h3>Smartphone</h3>
-                <img
-                    src="Imagenes/XiaomiMobil1.jpg"
-                    alt="Imagen Xiaomi 1"
-                    class="hover-image"
-                    />
-            </div>
-            <div class="image2">
-                <h3>Notebook</h3>
-                <img
-                    src="Imagenes/LaptoXiaomi1.jpg"
-                    alt="Laptop Xiaomi 1"
-                    class="hover-image"
-                    />
-            </div>
-            <div class="image3">
-                <h3>PC</h3>
-                <img src="Imagenes/PC1.jpg" alt="PC 1" class="hover-image" />
-            </div>
+        <div class="box">
+          <h2>SÍGUENOS</h2>
+          <div class="red-social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+          </div>
         </div>
+      </div>
 
-        <footer id="footer" class="pie-pagina">
-            <div class="grupo-1">
-                <div class="box">
-                    <figure>
-                        <a href="#header">
-                            <img src="Imagenes/logo.png" alt="Logo HawkFix" />
-                        </a>
-                    </figure>
-                </div>
-
-                <div class="box">
-                    <h2>CONTÁCTANOS</h2>
-                    <p>WhatsApp</p>
-                    <p>+51 921293419</p>
-                </div>
-
-                <div class="box">
-                    <h2>SÍGUENOS</h2>
-                    <div class="red-social">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-youtube"></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grupo-2">
-                <small
-                    >&copy; 2024 <b>HawkFix</b> - Todos los Derechos Reservados.</small
-                >
-            </div>
-        </footer>
-    </body>
+      <div class="grupo-2">
+        <small
+          >&copy; 2024 <b>HawkFix</b> - Todos los Derechos Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
 </html>

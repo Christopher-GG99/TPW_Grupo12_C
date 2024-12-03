@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Citas</title>
+    <link rel="stylesheet" href="EstiloTablaCitas.css" />
+  </head>
+  <body>
+      <button id="volver" onclick="window.history.back();">&#8592;</button>
+      
+    <div class="form-container">
+      <h2>Gestionar Cita</h2>
+      <form id="appointmentForm">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" required />
+        </div>
+        <div class="form-group">
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" name="hora" required />
+        </div>
+        <div class="form-group">
+          <label for="dispositivo">Tipo de dispositivo:</label>
+          <select id="dispositivo" name="dispositivo" required>
+            <option value="Laptop">Laptop</option>
+            <option value="Smartphone">Smartphone</option>
+            <option value="PC">PC</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="motivo">Motivo de la cita:</label>
+          <textarea
+            id="motivo"
+            name="motivo"
+            placeholder="Describe el problema o la consulta"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Guardar Cita</button>
+      </form>
+    </div>
+
+    <div class="list-container">
+      <h2>Lista de Citas</h2>
+      <ul class="citas-lista" id="citasLista"></ul>
+    </div>
+    <script src="citas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opciones de Cliente</title>
+    <link rel="stylesheet" href="EstiloTablaUsuario.css" />
+  </head>
+  <body>
+      <button id="volver" onclick="window.history.back();">&#8592;</button>
+      
+    <div class="container">
+      <h1>Opciones de Cliente</h1>
+
+      <div id="alertSuccess" class="alert alert-success">
+        Operación realizada con éxito
+      </div>
+      <div id="alertError" class="alert alert-error">
+        Por favor complete todos los campos correctamente
+      </div>
+
+      <form id="clientOptionsForm">
+        <div class="form-group">
+          <label for="cita">Reservar Cita:</label>
+          <input type="date" id="cita" name="cita" required />
+        </div>
+
+        <div class="form-group">
+          <label for="problema">Describir Problema:</label>
+          <textarea id="problema" name="problema" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="historial">Consultar Historial:</label>
+          <input
+            type="text"
+            id="historial"
+            name="historial"
+            placeholder="Ingrese ID de cliente"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="retroalimentacion">Dejar Retroalimentación:</label>
+          <textarea
+            id="retroalimentacion"
+            name="retroalimentacion"
+            rows="3"
+            placeholder="Escribe tus comentarios"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="credito">Solicitar Crédito:</label>
+          <input
+            type="number"
+            id="credito"
+            name="credito"
+            placeholder="Monto de crédito"
+            min="0"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="estadoCredito">Consultar Estado de Crédito:</label>
+          <input
+            type="text"
+            id="estadoCredito"
+            name="estadoCredito"
+            placeholder="ID de crédito"
+            required
+          />
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <h2>Resumen de Opciones de Cliente</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha de Cita</th>
+            <th>Descripción del Problema</th>
+            <th>ID de Historial</th>
+            <th>Retroalimentación</th>
+            <th>Monto del Crédito</th>
+            <th>ID de Crédito</th>
+          </tr>
+        </thead>
+        <tbody id="clientSummaryTable"></tbody>
+      </table>
+    </div>
+
+    <script src="ScriptTablaUsuario.js"></script>
+  </body>
+</html>

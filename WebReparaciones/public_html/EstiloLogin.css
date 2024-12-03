@@ -1,106 +1,111 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background: url('fondo.jpg') no-repeat center center fixed; /* Reemplaza 'fondo.jpg' con la imagen de fondo deseada */
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+body {
+    background: url('Imagenes/ImagenTop.png') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover;  /* Asegura que la imagen cubra toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        /* Contenedor del formulario */
-        .login-container {
-            background-color: white;
-            padding: 30px;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+/* Contenedor del formulario */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
 
-        .login-container h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
+/* Título con degradado */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    background: linear-gradient(315deg, #B22222 0%, #FF6347 100%);  /* Degradado de rojo oscuro a rojo claro */
+    -webkit-background-clip: text;  /* Para que el degradado se aplique solo al texto */
+    color: transparent;  /* Hace que el color de fondo se vea solo en el texto */
+    display: inline;  /* Asegura que el degradado se aplique solo al texto */
+}
 
-        /* Estilos de los campos de entrada */
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+/* Estilos de los campos de entrada */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-        /* Botones de redes sociales */
-        .social-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin: 15px 0;
-        }
+/* Botones de redes sociales */
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
 
-        .social-button {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 20px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        /* Estilo del checkbox */
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            margin: 10px 0;
-        }
+.social-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
 
-        .checkbox-container input {
-            margin-right: 10px;
-        }
+/* Estilo del checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 10px 0;
+}
 
-        /* Botón de enviar */
-        .submit-btn {
-            width: 20%;
-            height: 50px;
-            padding: 10px;
-            background-color: #600000;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 18px;
-            cursor: pointer;
-        }
+.checkbox-container input {
+    margin-right: 10px;
+}
 
-        .submit-btn:hover {
-            background-color: #c21818;
-        }
+/* Botón de enviar con degradado */
+.submit-btn {
+    width: 20%;
+    height: 50px;
+    padding: 10px;
+    background: linear-gradient(315deg, #B22222 0%, #FF6347 100%);  /* Degradado de rojo oscuro a rojo claro */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
 
-        /* Enlaces adicionales */
-        .extra-links {
-            margin-top: 15px;
-            font-size: 14px;
-        }
+.submit-btn:hover {
+    background: linear-gradient(315deg, #FF6347 0%, #B22222 100%);  /* Reversa el degradado al hacer hover */
+}
 
-        .extra-links a {
-            color: #007BFF;
-            text-decoration: none;
-        }
+/* Enlaces adicionales */
+.extra-links {
+    margin-top: 15px;
+    font-size: 14px;
+}
 
-        .extra-links a:hover {
-            text-decoration: underline;
-        }
+.extra-links a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}

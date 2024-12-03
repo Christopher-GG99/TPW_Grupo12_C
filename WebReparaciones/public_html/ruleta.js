@@ -1,37 +1,58 @@
 const casillas = Array.from(document.querySelectorAll('.casilla'));
 const premios = [
     "Descuento 10%",
-    "Tiempo 1/3",
-    "Descuento 20%",
+    "Reduccion de Tiempo 30%",
+    "Bolsa de nuestra Marca",
     "Descuento 15%",
-    "Tiempo 1/2",
-    "Descuento 25%",
-    "Descuento 5%",
-    "Nada",  // si se nos ocurre otro premio lo ponemos aqui
-    "Descuento 35%"
+    "Reduccion de Tiempo 50%",
+    "Una Optimizacion Gratis a tu dispositivo",
+    "Descuento 20%",
+    "Reduccion de Tiempo 25%",
+    "Fondo de Pantalla animado de la marca"
 ];
 
-document.getElementById("girar").addEventListener("click", function() {
-    let premioAleatorio = Math.floor(Math.random() * casillas.length);
-    let vueltas = 20 + premioAleatorio; // Número de vueltas antes de detenerse
+document.getElementById("girar").addEventListener("click", function () {
+    let premioAleatorio = Math.floor(Math.random() * casillas.length); // Índice del premio
+    let vueltasBase = 3; // Número de vueltas completas
+    let vueltasTotales = vueltasBase * casillas.length + premioAleatorio; // Total de pasos
 
     let indiceActual = 0;
-    let intervalo = setInterval(() => {
-        // Para quitar el resaltado de la casilla anterior
+    let intervalo = 100; // Velocidad inicial
+    let intervaloID = setInterval(() => {
+        // Quitar resaltado de la casilla actual
         casillas[indiceActual].classList.remove('seleccionada');
 
-        // Para avanzar a la siguiente casilla
+        // Avanzar a la siguiente casilla
         indiceActual = (indiceActual + 1) % casillas.length;
 
-        // Para resaltar la nueva casilla
+        // Resaltar la nueva casilla
         casillas[indiceActual].classList.add('seleccionada');
 
-        vueltas--;
+        vueltasTotales--;
 
-        //Para Detener la ruleta cuando se completen las vueltas y nos salga el premio
-        if (vueltas <= 0) {
-            clearInterval(intervalo);
-            document.getElementById("resultado").textContent = "¡Felicidades! Has ganado: " + premios[premioAleatorio];
+        // Reducir gradualmente la velocidad para un efecto de frenado
+        if (vueltasTotales < 10) {
+            intervalo += 20; // Incrementar intervalo para reducir la velocidad
+            clearInterval(intervaloID); // Detener el intervalo actual
+            intervaloID = setInterval(() => {
+                if (vueltasTotales <= 0) {
+                    clearInterval(intervaloID);
+                    document.getElementById("resultado").textContent =
+                        "¡Felicidades! Has ganado: " + premios[premioAleatorio];
+                } else {
+                    casillas[indiceActual].classList.remove('seleccionada');
+                    indiceActual = (indiceActual + 1) % casillas.length;
+                    casillas[indiceActual].classList.add('seleccionada');
+                    vueltasTotales--;
+                }
+            }, intervalo);
         }
-    }, 100); // Cambia de casilla cada 1 seg. para el efecto de transicion
+
+        // Detenerse cuando las vueltas se completen
+        if (vueltasTotales <= 0) {
+            clearInterval(intervaloID);
+            document.getElementById("resultado").textContent =
+                "¡Felicidades! Has ganado: " + premios[premioAleatorio];
+        }
+    }, intervalo);
 });
